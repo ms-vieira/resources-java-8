@@ -8,5 +8,5 @@ https://github.com/msvieiraweb/java8-news
 
 ### Instruções para execução do projeto
 - Clonar o repositório.
-- Importar em uma IDE e ter o Java 8 instalado.
+- Importar em uma IDE e ter o pacote jdk1.8.
 - Executar com Java Run Application
