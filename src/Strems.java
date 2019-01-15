@@ -1,7 +1,5 @@
-import java.util.ArrayList;
-import java.util.Comparator;
-import java.util.List;
-import java.util.Optional;
+import java.util.*;
+import java.util.stream.Collectors;
 
 public class Strems {
 
@@ -73,10 +71,18 @@ class Example {
                Pega qualquer um deles
                Se existir um curso,
                Imprima ele. */
-                dados.stream().
+        dados.stream().
                 filter(d -> d.getId() > 1).
                 findAny().
                 ifPresent(d -> System.out.println(d.getNome()));
+
+        /* Após filtrar os dados menor que 3 e manipular
+           podemos converter para collections
+         */
+        dados.stream().
+                filter(d -> d.getId() < 3).
+                collect(Collectors.toMap(d -> d.getNome(), d -> d.getId())).
+                forEach((id, nome) ->System.out.println(nome + " tem " + id));
 
     }
 }
