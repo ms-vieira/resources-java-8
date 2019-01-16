@@ -6,7 +6,7 @@ import java.util.List;
 import java.util.function.Consumer;
 import java.util.function.Function;
 
-public class News {
+public class LambdaMethodReferences {
     public static void main(String[] args) {
 
         List<String> palavras = new ArrayList<String>();
@@ -39,7 +39,7 @@ public class News {
 
         /* Outra maneira de comparação
         palavras.sort(String.CASE_INSENSITIVE_ORDER);*/
-        
+
         //Convertendo para Lambda
         new Thread(new Runnable() {
 
