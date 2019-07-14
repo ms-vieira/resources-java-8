@@ -1,44 +1,23 @@
-import java.util.*;
+package stream;
+
+import stream.Stream;
+
+import java.util.ArrayList;
+import java.util.Comparator;
+import java.util.List;
 import java.util.stream.Collectors;
 
-public class Strems {
+public class WebStarter {
 
-    private String nome;
-    private int id;
-
-    public Strems(String nome, int id) {
-        super();
-        this.nome = nome;
-        this.id = id;
-    }
-
-    public String getNome() {
-        return nome;
-    }
-
-    public void setNome(String nome) {
-        this.nome = nome;
-    }
-
-    public int getId() {
-        return id;
-    }
-
-    public void setId(int id) {
-        this.id = id;
-    }
-}
-
-class Example {
     public static void main(String[] args) {
 
-        List<Strems> dados = new ArrayList<Strems>();
-        dados.add(new Strems("Dado1", 1));
-        dados.add(new Strems("Dado2", 2));
-        dados.add(new Strems("Dado3", 3));
+        List<Stream> dados = new ArrayList<Stream>();
+        dados.add(new Stream("Dado1", 1));
+        dados.add(new Stream("Dado2", 2));
+        dados.add(new Stream("Dado3", 3));
 
         //Method References
-        dados.sort(Comparator.comparing(Strems::getId));
+        dados.sort(Comparator.comparing(Stream::getId));
 
         //Stream - Filter
         dados.stream().
@@ -50,7 +29,7 @@ class Example {
                         forEach(System.out::println);
 
         //For utilizando Lambda
-        //dados.forEach(d -> System.out.println(d.getNome()));
+        dados.forEach(d -> System.out.println("Imprimindo utilizando Lambda - " + d.getNome()));
 
             /* Declaramos um inteiro
                Pegamos todos os dados
@@ -60,16 +39,15 @@ class Example {
              */
         int sum = dados.stream().
                 filter(d -> d.getId() > 1).
-                mapToInt(Strems::getId).
+                mapToInt(Stream::getId).
                 sum();
-        System.out.println(sum);
+        System.out.println("Imprimindo a soma - " + sum);
 
         dados.stream().filter(d -> d.getId() > 2).findAny();
 
             /* Collection Optional
                Se existir um id maior que 1
                Pega qualquer um deles
-               Se existir um curso,
                Imprima ele. */
         dados.stream().
                 filter(d -> d.getId() > 1).
@@ -82,7 +60,7 @@ class Example {
         dados.stream().
                 filter(d -> d.getId() < 3).
                 collect(Collectors.toMap(d -> d.getNome(), d -> d.getId())).
-                forEach((id, nome) ->System.out.println(nome + " tem " + id));
+                forEach((id, nome) -> System.out.println(nome + " tem " + id));
 
     }
 }

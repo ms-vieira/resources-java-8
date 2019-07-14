@@ -1,10 +1,10 @@
-# java8-news
+# resources-java-8
 
 ## Novos recursos da linguagem
 Default Methods, Lambdas, Method references, Streams, Collectors e APIs e Dates.
 
 ## Repositório do projeto:
-https://github.com/msvieiraweb/java8-news
+https://github.com/msvieiraweb/resources-java-8
 
 ### Instruções para execução do projeto
 - Clonar o repositório.
